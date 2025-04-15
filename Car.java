@@ -10,6 +10,14 @@ public class Car extends Actor
         {
             resetCar();
         }
+        
+        if(isTouching(Hero.class))
+        {
+            //add a game over symbol
+            DisappointFace disappointFace = new DisappointFace();
+            getWorld().addObject(disappointFace, 300, 200);
+            getWorld().removeObject(this);
+        }
     }
     
     public void resetCar()
